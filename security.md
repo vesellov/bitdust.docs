@@ -142,7 +142,11 @@ In addition to the  possibility of storing your data distributed on remote machi
 
 It is possible to organize the fully secured storage of a user data so that it will be absolutely unavailable for anyone apart from the owner. The user and only the user will have the key to the only existing copy of this data, allocated on multiple machines within the BitDust network. These nodes store only encrypted fragments of the general data array and cannot read them or use them in any way.  
 
-It is okay to just delete the original file from your hard disk drive after the data upload to the BitDust network has been finished. NOTE: In the beginning we will be growing the BitDust network with supporters. We would require a high number of supporters to guarantee availability of your data. The private key user can be stored on a USB-stick and the local copy of the private key can be deleted from your local disk. The BitDust program will be started on the given computer only if this USB-stick is plugged in and the software will read the secret key by the start and store it in the computers operation memory, without creating a copy on the local disk drive. Now, after launching the program the user extracts USB-stick and hides it in a safe place. So USB-stick acts as a normal "physical" key - just like a key for your Lambo:).
+It is totally fine to just delete the original file from your hard disk drive after the data upload to the BitDust network has been finished.
+
+__NOTE__: In the beginning we will be growing the BitDust network with supporters. We would require a high number of supporters to guarantee availability of your data.
+
+Further, the private key of the user can be stored on a USB-stick and the local copy of the private key can be deleted from your local disk. The BitDust program will be started on the given computer only if this USB-stick is plugged in and the software will read the secret key by the start and store it in the computer operation memory, without creating a copy on the local disk drive. Now, after launching the program the user extracts USB-stick and hides it in a safe place. So USB-stick acts as a normal "physical" key - just like a key for your car.
 
 In addition to portative USB-stick we recommend you to print the private key on a regular A4 paper and keep it in a safe place. In this case the user provides additional security if the USB-stick breaks down for example. We also advice you to put a password in place and encrypt your private key stored on your USB-stick, so that even if you lose it you are still safe.
 
@@ -152,4 +156,3 @@ Our given approach is unique, after uploading personal user data within the BitD
 Restoring the source user data is possible only with the help of the private key which is kept on user’s USB-stick or possibly on additional media. 
 
 We believe firmly that your most private data should only be read and used by you and we want to provide you with the full control to make this possible.
-
