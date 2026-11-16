@@ -158,7 +158,7 @@ Despite the word "server" in the name, Identity servers do not form a central po
 
 Each active BitDust user, whether a consumer or a provider of resources, must have an "identity" within the network to be able to communicate with other nodes and be a part of the BitDust community.
 
-Your "identity" is a small digitally-signed XML file that is distributed across several Identity servers on the BitDust network. This XML file contains important information about the device that describes how to connect to the user securely: IP address and port number, public key, nickname, etc.
+Your "identity" is a small digitally-signed XML file that is distributed across several Identity servers on the BitDust network. This XML file contains important information about the device that describes how to connect to the user securely: IP address and port number (by default - of the user's proxy-router, see [User Connections behind NAT](principle.md#user-connections-behind-nat)), public key, nickname, etc.
 
 When you contact another user in the network for the first time, you both share copies of your identities and learn how to connect to each other via the Internet. The BitDust software does everything automatically for you and establishes a secure private peer-to-peer connection between devices.
 
@@ -307,7 +307,7 @@ Now continue and create other identities `bob`, `carl` and `dave` on the other m
 
 As you should have understood from the previous sections, there are different types of nodes within the BitDust network — in other words, "roles". By design, the central role in the [BitDust ecosystem](ecosytem.md) is the end user, the "customer". Other "roles" are designed to support the customer in one way or another and provide the customer with the necessary resources and services.
 
-The preferred way to connect end users within the BitDust network is always using direct peer-to-peer connections - this is the most private, safest and fastest way to transfer data. However, in some cases, depending on the type of Internet connection and network configuration, a direct connection between two end users is not physically possible.
+End users within the BitDust network can be connected with direct peer-to-peer connections. However, in many cases, depending on the type of Internet connection and network configuration, a direct connection between two end users is not physically possible - most of them are behind NAT and have no public IP address. That is why routing via proxy-routers is enabled by default for end users, and direct connections are used only when routing is disabled and the node is able to accept incoming connections.
 
 A possible solution to this problem is to use one or more intermediate nodes, which have a more open network configuration, to redirect traffic between two users located behind NAT.
 
@@ -363,7 +363,7 @@ If we are talking about a global public network, the "supplier" role, as well as
 
 So, let's assume that `alice`, `bob`, `carl` and `dave` are not part of the "core" network we just built, but simply enthusiasts who have just installed the software on their virtual servers and want to donate part of their drives to other users.
 
-To become a supplier within the BitDust network, you just need to enable and configure the "supplier" service:
+On a regular node the "supplier" service is enabled by default. On our "core" nodes we disabled it in Part 2, so to become a supplier you just need to enable and configure the "supplier" service again:
 
     ssh host-a.com
     bitdust set services/supplier/enabled true

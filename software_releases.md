@@ -18,8 +18,8 @@ When changes in the development repo are considered "good enough", the files are
 
 This process can be considered a new "Release" - BitDust does not have any versioning of releases because it is not required. After the Pull Request is merged, the release is done.
 
-Every BitDust node periodically "checks & fetches" fresh commits from the Git repository it was cloned from.
-This way the BitDust software on your local machine automatically "updates itself" and stays in sync with the "Stable" repository. Every BitDust contributor is responsible for delivering high-standard, super reliable and well-tested source code changes every time a Pull Request is merged.
+Every BitDust node whose sources are located in the `~/.bitdust/src/` folder "checks & fetches" fresh commits from the Git repository it was cloned from some time after it starts (`git fetch` and `git reset --hard origin/master`).
+This way the BitDust software on your local machine automatically "updates itself" and stays in sync with the "Stable" repository. Sources cloned to any other location are not updated automatically. Every BitDust contributor is responsible for delivering high-standard, super reliable and well-tested source code changes every time a Pull Request is merged.
 
 You can also fork the BitDust "stable" repo and clone your fork locally to quickly check and run the main Python code. Just like any other GitHub project you have forked, your fork will be fully independent of the main repo - you will have to sync with the main repo manually if you wish to stay on the same version. This works best for all developers and also for those who wish to learn BitDust or participate in testing.
 
@@ -27,9 +27,9 @@ If you stay out of sync with other users, your data is at risk! Remember to alwa
 
 For non-developers and all other people willing to join the BitDust network in the usual way, we maintain the [BitDust Desktop](https://github.com/bitdust-io/desktop/releases) application installer.
 
-You can go directly to the [bitdust.io web site](https://bitdust.io) and download the installer file - we provide a link directly from the [GitHub repo](https://github.com/bitdust-io/desktop/). The application uses the Electron framework for the GUI; it will automatically clone the BitDust Stable repo the first time you run the application and keep your local sources in sync with the master branch.
+You can go directly to the [bitdust.io web site](https://bitdust.io) and download the installer file - we provide a link directly from the [GitHub repo](https://github.com/bitdust-io/desktop/). The application uses the Electron framework for the GUI; it will automatically clone the BitDust Stable repo into the `~/.bitdust/src/` folder the first time you run the application and keep your local sources in sync with the master branch.
 
-As a user of the BitDust software, you can disable automatic updates at any moment in the program settings and always run only the code you cloned the first time you joined the BitDust network.
+As a user of the BitDust software, you can disable automatic updates at any moment by setting the environment variable `BITDUST_GIT_SYNC_SKIP=1` before starting BitDust (or by keeping the sources outside of the `~/.bitdust/src/` folder), and always run only the code you cloned the first time you joined the BitDust network.
 
 Below is a step-by-step guide for developers to deliver changes from the "Development" repository into the "Stable" repository.
 

@@ -198,10 +198,7 @@ it will be automatically "propagated" to `first-server.com` and `second-host.net
 
 ## Support BitDust network
 
-Contact the BitDust team to let them know that you have started a new ID server on your machine, and we will add your domain name to the __known_servers.py__ file, which stores the list of all known BitDust identity servers:
+If you plan to maintain your ID server for a while and support the network, it makes sense to include it in the list of "well known" identity servers, which is stored in the [default_network.json](https://github.com/bitdust-io/public/blob/master/default_network.json) file in the root of the BitDust public repository.
 
-* [mirror on GitHub](https://github.com/bitdust-io/devel/blob/master/userid/known_servers.py)
-* [mirror on dev.bitdust.io](https://dev.bitdust.io/code/devel/blob/master/userid/known_servers.py)
-
-You can fork the BitDust [development repository](https://dev.bitdust.io/code/devel) and open a Pull Request to modify the list of known servers in place.
+You can fork the [Public Git Repository](https://github.com/bitdust-io/public), modify the `default_network.json` file in your forked repository and open a [Pull Request](https://github.com/bitdust-io/public/pulls) with your changes. Contact the BitDust contributors to let them know that you have started a new ID server, and one of the developers will approve your Pull Request.
 

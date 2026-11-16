@@ -16,7 +16,7 @@ In this section you can read about user identification and how it is done within
 
 ## Identity files
 
-For other nodes to connect to a user's machine, they have to know the address of the user's computer on the Internet. These contacts are stored in an XML file called __Identity__. When connecting to other nodes, their identity files are downloaded and the received information is used for the direct transfer of service packets.
+For other nodes to connect to a user's machine, they have to know the address of the user's computer on the Internet. These contacts are stored in an XML file called __Identity__. When connecting to other nodes, their identity files are downloaded and the received information is used for the transfer of service packets - by default via the proxy-router of the remote node, or directly if routing is disabled there (see [User Connections behind NAT](principle.md#user-connections-behind-nat)).
 
 In the user identity file the following information is stored:
 
@@ -85,6 +85,8 @@ And the identity file itself looks like this:
         </signature>
         </identity>
 
+
+This is an example of an older identity file of a node with routing disabled: the contacts contain the node's own IP address. By default, with routing via a proxy-router enabled, the contacts contain the network address of the router instead. The UDP transport shown in the example is temporarily disabled in current versions.
 
 Each identity file can have several copies stored on different servers – to ensure the fault tolerance of user identification within the BitDust network. Thus each node can have several IDURL addresses by which it can be identified.
 
@@ -248,13 +250,13 @@ The BitDust network protocol is a [pseudonymous peer-to-peer](https://en.wikiped
 While registering a new identity, you will choose a "nickname" that will never change during the lifetime of that identity.
 Your nickname may represent your real name or be a random string. It can be the name of an animal or a president or anything else you wish other users to see when communicating with you via BitDust.
 
-Your identity file also stores networking information, such as an IP address and TCP/UDP port number. By default routing via proxy-routers is enabled, so the file contains the network address of your proxy-router instead of your own - the router itself still knows your real IP address. If you disable routing, the file contains the IP address of your own device, which may reveal your "physical" location; in that case you must also configure port forwarding and open ports so that your node can receive incoming connections, see [User Connections behind NAT](principle.md#user-connections-behind-nat). Hiding the physical location of the user is not a goal of the BitDust project.
+Your identity file also stores networking information, such as an IP address and TCP port number. By default routing via proxy-routers is enabled, so the file contains the network address of your proxy-router instead of your own - the router itself still knows your real IP address. If you disable routing, the file contains the IP address of your own device, which may reveal your "physical" location; in that case you must also configure port forwarding and open ports so that your node can receive incoming connections, see [User Connections behind NAT](principle.md#user-connections-behind-nat). Hiding the physical location of the user is not a goal of the BitDust project.
 
 If you wish to further reduce the disclosure of your networking info, there are a few optional possibilities in BitDust:
 
 * Run your own BitDust ID-server node on an external device (whose physical location may be disclosed - it acts as a "shield") and re-configure your "master" device using [known-servers](https://bitdust.io/wiki/settings.html#services/identity-propagate/known-servers-(string)) and [preferred-servers](https://bitdust.io/wiki/settings.html#services/identity-propagate/preferred-servers-(string)) settings before registering a new identity in the network
 * Run your own BitDust proxy-router node on an external device (whose physical location may be disclosed - it acts as a "shield") and re-configure your "master" device using [preferred-routers](https://bitdust.io/wiki/settings.html#services/proxy-transport/preferred-routers-(text)) setting - this way the IP address of your "master" device is not visible to any other nodes in the network at all
-* Use VPN services to enable lower-level networking protection on your device, and BitDust will work on top of that via the same TCP/UDP protocols - other users will see the IP addresses of the VPN providers, but not your own IP address in that situation
+* Use VPN services to enable lower-level networking protection on your device, and BitDust will work on top of that via the same TCP protocol - other users will see the IP addresses of the VPN providers, but not your own IP address in that situation
 
 Note also that, while the blockchain functions are enabled, your nickname and public key are recorded in the public BitDust blockchain when your identity is registered there - see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts).
 

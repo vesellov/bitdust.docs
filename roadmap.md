@@ -51,7 +51,7 @@ In order to track the different states of the network we are implementing an ope
 Python-based blockchain, based on the [Bismuth](https://github.com/bismuthfoundation/Bismuth) project. The miner will play a big role in validating the changes in the
 network. You can read more about the way we want to approach this in the [Crypto Contracts](crypto_contracts.md)
 and [Roles and Coins](roles_coins.md) sections. The blockchain, a built-in wallet, identity registration and storage contracts
-already exist in the software, but at the moment do not affect the operation of the network and can be disabled in the settings,
+already exist in the software, but at the moment do not affect data storage yet and can be disabled in the settings,
 see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts). In short, the BitDust blockchain will:
 
 * Give users the ability to rent space from suppliers with BitDust coins.
@@ -108,8 +108,8 @@ features in the future:
 ## Chat/Video/Conferencing
 
 We have already implemented simple functionality to transfer encrypted private messages between nodes.
-They are transmitted directly from sender to receiver, protected with the digital signature of the sender
-and encrypted with the public key of the recipient before being sent to the network.
+They are transmitted peer-to-peer from sender to receiver - by default via proxy-routers, which are not able to read them -
+protected with the digital signature of the sender and encrypted with the public key of the recipient before being sent to the network.
 
 In parallel with the development of the graphical user interface, we have developed a method
 for the simple exchange of short messages just like in a typical chat system.

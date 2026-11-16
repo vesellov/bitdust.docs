@@ -1,9 +1,10 @@
 # Running BitDust supplier node
 
 
-A supplier is a person who donates part of the storage of their own PC and shares resources with other users in the network.
+A supplier is a node whose owner donates part of the storage of their own PC and shares resources with other users in the network.
+The supplier role is enabled by default on every node - the steps below show how to run a node that only donates storage and does not consume it.
 
-At the moment suppliers are not rewarded for the contribution they make to the network. Storage contracts and payments with BitDust coins already exist in the software, but at the moment this does not affect the operation of the network in any way, and the function can be disabled in the program settings, see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts).
+At the moment suppliers are not rewarded for the contribution they make to the network. Storage contracts and payments with BitDust coins already exist in the software, but at the moment this does not affect data storage yet, and the function can be disabled in the program settings, see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts).
 
 Read more about [BitDust installation](install.md) or just follow the few steps below to install the software on your machine.
 
@@ -41,9 +42,9 @@ If you have not yet created an identity for your device in the BitDust network, 
         bitdust id create <some nick name>
 
 
-When you do it for the first time, we recommend creating another copy of your Private Key in a safe place to be able to recover your identity in BitDust in the future. You can make a backup copy with this command:
+When you do it for the first time, we recommend creating another copy of your Private Key in a safe place to be able to recover your identity in BitDust in the future. You can make a backup copy with this command (the BitDust software must be running):
 
-        bitdust key copy <nickname>.bitdust.key
+        bitdust key backup master <nickname>.bitdust.key
 
 
 Finally, start the BitDust software in daemon mode so it keeps running in the background and you can keep using your PC:

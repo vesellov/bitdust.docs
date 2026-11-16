@@ -30,7 +30,7 @@ Under Ubuntu/Debian, and probably most other distros as well, you can install al
         sudo apt-get install git gcc python3-dev python3-virtualenv
 
 
-Optionally, you can also install the [miniupnpc](http://miniupnp.tuxfamily.org/) tool if you want BitDust to automatically set up the UPnP configuration of your network router, so it can also accept incoming connections from other nodes:
+Optionally, you can also install the [miniupnpc](http://miniupnp.tuxfamily.org/) tool if you want BitDust to automatically set up the UPnP configuration of your network router, so it can also accept incoming connections from other nodes. By default incoming traffic reaches your node via a proxy-router, so this is needed only if you disable routing - see [User Connections behind NAT](principle.md#user-connections-behind-nat):
 
         sudo apt-get install miniupnpc
 
@@ -60,7 +60,7 @@ The second step is to get the BitDust sources. To have full control over the Bit
         git clone https://github.com/<your GitHub username>/<name of BitDust fork>.git bitdust
 
 
-The software will periodically run `git fetch` and `git rebase` to check for recent commits in the repo. This way we make sure that everyone is running the latest version of the program. Once you have made a fork, you will have to update your fork manually and pull commits from the public BitDust repository if you trust them.
+If the sources are located in the `~/.bitdust/src/` folder (this is where the [BitDust Desktop](software_releases.md) application clones them), the software automatically updates itself: some time after start it runs `git fetch` and `git reset --hard origin/master` in that folder. Sources cloned to any other location are not updated automatically - you need to run `git pull` yourself. This way we make sure that everyone is running the latest version of the program. Once you have made a fork, you will have to update your fork manually and pull commits from the public BitDust repository if you trust them.
 
 However, if you just trust the BitDust contributors, you can simply clone the public repository directly and the software will be up to date with the "official" public code base:
 
@@ -91,9 +91,9 @@ Start using the software by creating an identity for your device in the BitDust 
         bitdust id create <some nick name>
        
 
-We recommend creating another copy of your Private Key in a safe place to be able to recover your identity and access to your data in the future. You can do it with this command:
+We recommend creating another copy of your Private Key in a safe place to be able to recover your identity and access to your data in the future. You can do it with this command (the BitDust software must be running):
 
-        bitdust key copy <nickname>.bitdust.key
+        bitdust key backup master <nickname>.bitdust.key
 
 
 In the future, in case you need to restore access to your data, you will need to install BitDust again and recover your identity:
@@ -131,7 +131,7 @@ If you are installing BitDust on Windows, you may need some binary packages alre
 
 * cygwin: [cygwin.com](https://cygwin.com/install.html)
 * git: [git-scm.com](https://git-scm.com/download/win)
-* python2.7 or python3: [python.org](http://python.org/download/releases)
+* python3: [python.org](http://python.org/download/releases)
 * twisted: [twistedmatrix.com](http://twistedmatrix.com)
 * pyasn1: [pyasn1.sourceforge.net](http://pyasn1.sourceforge.net)
 * miniupnpc: [miniupnp.tuxfamily.org](http://miniupnp.tuxfamily.org/)

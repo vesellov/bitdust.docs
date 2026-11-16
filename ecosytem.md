@@ -17,7 +17,8 @@ supporting roles are live, the full power of the BitDust network will be unleash
 A customer/user of the BitDust network can install BitDust on their laptop/PC. Once it is installed,
 the user can create an identity without providing any personal data and start using BitDust to be in full control of their data.
 Every piece of your private data that goes through the
-network is encrypted with your private key. Nobody else has access unless you share it. For now we offer the
+network is encrypted before it leaves your device - by default with your Master Key, which never leaves your device. Nobody else has access unless you share it:
+data you want to share must be encrypted from the start with a separate Additional Key, a copy of which you give to a trusted contact (see [File Sharing](sharing.md)). For now we offer the
 following features:
 
 * Creating a pseudonymous BitDust account without providing any personal data
@@ -34,7 +35,8 @@ Curious about how to become a user of the BitDust network? Read more about it on
 
 
 ## Becoming a supporter in the BitDust network
-To make the BitDust network function, multiple roles are needed to support the network. For now all of the roles
+To make the BitDust network function, multiple roles are needed to support the network. The supplier role is enabled by default
+on every node, so every user already supports the network with a portion of their disk space. For now all of the other roles
 can only be set up using the command line. This basically means that you don't have an easy-to-use interface to set up
 your supporting role, like you have when you use BitDust as a customer/user. We will be making this available in the
 future so everybody can join. For now we focus on making it possible to set up the entire BitDust ecosystem, and afterwards we will
@@ -48,7 +50,7 @@ briefly below. Click on the role to get more detailed information and learn how 
 Supplier:
 As a supplier you support the BitDust ecosystem by providing storage to customers. At the moment you provide your hard disk space
 to customers for free; in the future you will be able to rent it out and get BitDust coins back as compensation (storage contracts and payments already exist
-in the software, but at the moment do not affect anything), see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts). As a supplier you store encrypted data of customers.
+in the software, but at the moment do not affect data storage yet), see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts). As a supplier you store encrypted data of customers.
 Being a good supplier also means that you keep the customers' data stored on your local machine and are always connected to the
 Internet. Interested in becoming a supplier? Read more about it on the [Running BitDust supplier node](supplier_node.md) page.
 
@@ -89,7 +91,7 @@ There are a lot of complex relationships within the BitDust ecosystem and it is 
 blockchain technology to accomplish this. A miner validates transactions within the BitDust blockchain. Transactions are the
 sending and receiving of BitDust coins from one user to another. BitDust coins will be used to reward supporting roles within
 the network. For instance, a customer will need BitDust coins to store data at suppliers. The BitDust blockchain, wallet and storage contracts
-already exist in the software, but at the moment do not affect anything and can be disabled in the settings; mining services are disabled by default,
+already exist in the software, but at the moment do not affect data storage yet and can be disabled in the settings; mining services are disabled by default,
 see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts). Read more about the original
 approach in the [Roles and Coins](roles_coins.md) draft. An alternative approach without its own blockchain, where payments
 are handled by the Merchants, is described in the [Merchants](merchants.md) draft proposal.

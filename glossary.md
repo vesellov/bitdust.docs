@@ -55,6 +55,16 @@ Service information of the packet (command, sender, recipient) is not [encrypted
 see [Data Security](security.md#data-transfer).
 
 
+#### Data Fragment
+A [fragment](#fragment) of the first RAID layer, which contains a piece of an [encrypted](#encryption) [block](#block).
+Every [supplier](#supplier) stores the Data fragments with its own position number, see [Automatic Data Rebuilding](rebuilding.md#data-redundancy).
+
+
+#### Parity Fragment
+A [fragment](#fragment) of the second RAID layer, calculated by an XOR operation between several [Data fragments](#data-fragment) of the same [block](#block) placed on other [suppliers](#supplier).
+Parity fragments make it possible to [rebuild](#rebuilding) lost Data fragments, see [RAID Transformation](rebuilding.md#raid-transformation).
+
+
 #### Data Packet
 #### Data Portion
 A [packet](#packet) containing an [encrypted](#encryption) [fragment](#fragment) of [data](#data).
@@ -99,6 +109,37 @@ Currently without reward; in the future may be compensated with BitDust coins, s
 A [node](#node) in the [BitDust network](#bitdust-network), whose owner uses the space on the HDDs of other [nodes](#node) for storing their own [data](#data).
 
 
+#### Supporter
+A user who maintains the [BitDust network](#bitdust-network) by running one or more supporting roles on their [node](#node): [supplier](#supplier), [proxy-router](#proxy-router), [ID-server](#id-server) or [DHT seed node](#dht-seed-node).
+These are roles, not a separate group of people: by default every node is both a [customer](#customer) and a supplier, see [Sharing resources](storage.md#sharing-resources).
+
+
+#### Proxy-router
+#### Router
+A [node](#node) which routes the traffic of other nodes, so that they can receive incoming connections even when they are behind NAT and have no public IP address (the "proxy-server" network service, disabled by default).
+Routing via a randomly selected proxy-router is enabled by default (the "proxy-transport" network service): the [identity](#identity) file of the user then contains the network address of the router instead of the user's own address, and the router knows the user's real IP address.
+The router cannot read the user's private [data](#data) or change the service information of the [packets](#packet) passing through it, see [User Connections behind NAT](principle.md#user-connections-behind-nat).
+
+
+#### Distributed Hash-Table
+#### DHT
+A decentralized key-value storage maintained jointly by all [nodes](#node) of the [BitDust network](#bitdust-network), which is used to store service information, to find other nodes (for example, candidates for new [suppliers](#supplier)) and to support connections between users, see [Distributed Hash-Table](dht.md).
+
+
+#### DHT Seed Node
+A [node](#node) with a well-known network address, which helps other nodes to join the [DHT](#dht), see [Running BitDust seed node](seed_node.md).
+
+
+#### ReBuilder
+A planned supporting role, not implemented yet: a [node](#node) which will perform [rebuilding](#rebuilding) of lost [fragments](#fragment) on behalf of the [customer](#customer).
+Until then, rebuilding is performed by the BitDust software on the customer's own device.
+
+
+#### Miner
+A planned supporting role: a [node](#node) which will maintain the [BitDust blockchain](#bitdust-blockchain).
+Mining services already exist in the software, but are disabled by default. An alternative approach is described in [BitDust Merchants](merchants.md).
+
+
 #### Customers folder
 A local folder on the hard disk drive of the [supplier's](#supplier) machine, where the [data](#data) of their [customers](#customer) is stored.
 
@@ -139,6 +180,21 @@ A [packet](#packet) of [data](#data) containing a service code, a [message](#mes
 
 #### Message
 An [encrypted](#encryption) text message addressed to a specific user.
+
+
+#### BitDust Blockchain
+A public blockchain built into the [BitDust software](#bitdust-software) (based on a modified copy of the Bismuth project), which records [identity registrations](#identity), [storage contracts](#storage-contract) and payments in BitDust coins between [nodes](#node).
+It does not contain personal data of the users. At the moment it does not affect data storage yet and can be disabled in the program settings, see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts).
+
+
+#### BitDust Coins
+The internal currency of the [BitDust blockchain](#bitdust-blockchain), kept in a wallet built into the [BitDust software](#bitdust-software).
+In the future it will be used to compensate [supporters](#supporter) for the resources they provide to the network.
+
+
+#### Storage Contract
+A digitally signed agreement between a [customer](#customer) and a [supplier](#supplier), recorded in the [BitDust blockchain](#bitdust-blockchain), which accounts for the storage space provided; completed contracts are paid with [BitDust coins](#bitdust-coins).
+At the moment storing data remains free and suppliers do not reject customers who have not paid, see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts).
 
 
 #### Encryption
@@ -189,6 +245,10 @@ See [How authentication works](identities.md#how-authentication-works).
 #### Identity
 A publicly readable file containing a [public key](#public-key), 
 [digital signature](#digital-signature), contact details and other information belonging to a specific user.
+
+
+#### Nickname
+A name chosen by the user when the [identity](#identity) is created. It is part of the [IDURL](#idurl) and, together with the [public key](#public-key), the only thing by which the user is known in the [BitDust network](#bitdust-network) - no real name, email or phone number is required.
 
 
 #### ID-server

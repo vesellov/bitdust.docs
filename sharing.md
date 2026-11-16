@@ -45,7 +45,7 @@ When working with additional keys you can perform the following actions:
 
 
 You will find your additional private keys in the `.bitdust/keys` folder.
-Currently the BitDust software uses the [RSA algorithm](https://en.wikipedia.org/wiki/RSA_(cryptosystem)), which is a widely used encryption method.
+Currently the BitDust software uses the [RSA algorithm](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) for these keys, which is a widely used encryption method; the data itself is encrypted with AES using a session key, which is in turn encrypted with RSA - see [Data Security](security.md#encryption).
 These methods were implemented using the [PyCryptodome](https://pypi.org/project/pycryptodomex/) library.
 
 Note that most of these actions are performed automatically. We just want to describe the steps BitDust performs to give you more insight into the inner workings of the software.
@@ -115,7 +115,7 @@ Let's try to describe everything that happens with your data step by step at the
 * A new additional private key is generated automatically and you are able to verify the key in the app
 * Via the "Share Key" button in the app you can transfer a copy of the key to another device/person - this is supposed to be done in the most secure way possible
 * Your trusted person is also running BitDust and also has an identity in the network
-* When they receive your private key, they keep it in their own files catalog as well and are able to see the files listed in this "share"
+* When they receive a copy of the additional private key of that "share" (never your Master Key), they keep it in their own files catalog as well and are able to see the files listed in this "share"
 * Both of you can easily upload & download files into that "shared" location via the app
 * Each uploaded data fragment is stored on your own suppliers - on the suppliers hired by the creator of the "share"
 * All suppliers also keep in touch with both you and the other user - they are able to notify you both about any updates to the "share"

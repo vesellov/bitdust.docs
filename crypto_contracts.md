@@ -8,7 +8,7 @@
 
 ## Business requirements
 
-BitDust already has its own blockchain with BitDust "coins" and storage contracts, but at the moment they do not affect the operation of the network in any way and can be disabled in the settings, see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts). The idea is to count hardware resources, not euros, dollars or bitcoins. However, to be able to buy/sell PC resources, it is of course necessary to implement some "coins". There are several important points that need to be considered here:
+BitDust already has its own blockchain with BitDust "coins" and storage contracts, but at the moment they do not affect data storage yet and can be disabled in the settings, see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts). The idea is to count hardware resources, not euros, dollars or bitcoins. However, to be able to buy/sell PC resources, it is of course necessary to implement some "coins". There are several important points that need to be considered here:
 
 + Because of the distributed design of the whole BitDust ecosystem, all billing and payments must be fully decentralized/distributed as well. That means there should not be a single point of control - nobody should be able to control and manage all billing operations in the network and collect/centralize customer information.
 
@@ -22,5 +22,5 @@ BitDust already has its own blockchain with BitDust "coins" and storage contract
 
 
 
-Based on these requirements we started designing and developing a distributed online payment system for the BitDust project. The goal is to allow users to earn some "coins" and benefit from providing the resources of their own PCs to other people. The first version of this payment system is already included in the software, but it does not affect anything yet.
+Based on these requirements we started designing and developing a distributed online payment system for the BitDust project. The goal is to allow users to earn some "coins" and benefit from providing the resources of their own PCs to other people. The first version of this payment system is already included in the software, but it does not affect data storage yet.
 

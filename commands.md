@@ -42,8 +42,8 @@ delete the local identity from the machine
 copy the private key to the clipboard
 
 
-### key backup [a filename for copy of private key]
-copy the private key into a file
+### key backup [key ID] [a filename for copy of private key]
+copy the private key into a file, use `master` as key ID for your Master Key
 
 
 ### key print
@@ -257,7 +257,7 @@ show twisted log messages too
 
 #### Backup the Private Key
 
-    bitdust key backup ~/bitdust-alice-private.key
+    bitdust key backup master ~/bitdust-alice-private.key
     
 
 #### Some basic configuration

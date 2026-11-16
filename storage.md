@@ -61,7 +61,7 @@ Each of the roles can be disabled in the program settings at any moment:
 
 Participation in the BitDust network is always voluntary - every user decides whether to enable the supplier role and how much disk space to provide. There are two models of how resources are exchanged:
 
-+ __now__: resources are provided to the network for free ("donated") - providing resources is not rewarded and consuming resources is not charged; the storage contracts and payments described below already exist in the software, but do not affect this in any way yet
++ __now__: resources are provided to the network for free ("donated") - providing resources is not rewarded and consuming resources is not charged; the storage contracts and payments described below already exist in the software, but do not affect data storage yet
 + __in the future__: resources can be exchanged for BitDust coins - in other words, suppliers will be able to "rent out" their disk space. A user who provides more resources than they consume will be able to use all services of the network for free, and a user who consumes more than they provide will pay the difference with BitDust coins - read more in the [Crypto Contracts](crypto_contracts.md) section.
 
 In both models the user voluntarily decides to take part in the exchange - "voluntary association" and "renting out disk space" do not exclude each other.
@@ -76,7 +76,7 @@ The BitDust software already includes its own blockchain, based on a modified co
 + registration of your identity in the blockchain: a public transaction containing your nickname and public key is recorded, and a small registration bonus in coins is sent to your wallet
 + digitally signed storage contracts between a customer and their suppliers: the duration of each next contract grows, and completed contracts are paid automatically with BitDust coins from the customer's wallet
 
-At the moment this does not affect the operation of the network in any way: storing data remains free, and suppliers do not reject customers who have not paid. The function can be disabled in the program settings:
+At the moment this does not affect data storage yet: storing data remains free, and suppliers do not reject customers who have not paid. The function can be disabled in the program settings:
 
         bitdust set services/bismuth-blockchain/enabled false
 
@@ -148,7 +148,7 @@ Each and every user always voluntarily starts the BitDust program on their own d
 Finally, you can request and consume the following hardware resources from other users:
 
 + space on the hard disk drive of your "suppliers"
-+ CPU time of your "scrubbers"
++ CPU time of your "ReBuilders" (a planned role, not implemented yet)
 + network bandwidth of your "routers"
 
 In the program settings a user can set the following key data:

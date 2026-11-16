@@ -69,14 +69,14 @@ A digital signature is used not only to protect a user identity file from modifi
 
 All users exchange so-called "service packages", which include a digital signature and are safe from modifications in the process of forwarding via the Internet. This protects data from tampering, as all received packages are checked for the correspondence between their content and the digital signature.
 
-Service packages are forwarded in unencrypted form, but they are signed. The structure of a signed package is the following:
+The service information of a package is forwarded in unencrypted form, but it is signed; private data is carried inside the package only in encrypted form (see [Data Transfer](#data-transfer)). The structure of a signed package is the following:
 
 * `Command` – BitDust protocol command name
 * `OwnerID` – package owner IDURL 
 * `CreatorID` – IDURL of the creator, whose key signed the package 
 * `PacketID` – package identifier 
 * `Date` – creation date and time  
-* `Payload` – useful data in source (not encrypted) form 
+* `Payload` – useful data; private data is placed here only in encrypted form 
 * `RemoteID` – IDURL of addressee 
 * `Signature` – digital signature
 

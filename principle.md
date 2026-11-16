@@ -14,7 +14,7 @@ The user is able to safely interact with others using their ID and their own pri
 
 Each BitDust user is able to store data on the machines of other users, which are called suppliers. By default every user also acts as a supplier for other users, see [Sharing resources](storage.md#sharing-resources).
 
-Uploaded data is first encrypted, then backed up and organized into a RAID array, so that lost fragments can be rebuilt when some of the suppliers go offline.
+Uploaded data is first archived and divided into blocks, then each block is encrypted and split into fragments organized into a RAID array, so that lost fragments can be rebuilt when some of the suppliers go offline.
 
 
 ## Automatic Data Rebuilding
@@ -46,9 +46,9 @@ when you start the software for the first time. There is no centralized entity w
 A distributed hash-table is used for storing service information, supporting connections between users and maintaining of the network as a whole.
 
 
-## Transmits Data by HTTP, TCP or UDP
+## Transmits Data by TCP
 
-Data is transmitted using your active Internet connection. By default, incoming traffic reaches your node via a third node (a proxy-router); if routing is disabled, other nodes connect to your device directly - see below.
+Data is transmitted using your active Internet connection. At the moment only the TCP transport is enabled: the HTTP transport is not finished yet and the UDP transport is temporarily disabled (`services/http-transport/enabled` and `services/udp-transport/enabled` are `false` by default). By default, incoming traffic reaches your node via a third node (a proxy-router); if routing is disabled, other nodes connect to your device directly - see below.
 
 
 ## User Connections behind NAT

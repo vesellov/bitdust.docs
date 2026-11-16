@@ -2,7 +2,7 @@
 
 #### Draft 2
 
-__NOTE__: This is an early draft proposal. The current implementation is different: the BitDust blockchain, wallet and storage contracts already exist in the software (but do not affect anything yet), see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts); the Rebuilder role is not implemented yet.
+__NOTE__: This is an early draft proposal. The current implementation is different: the BitDust blockchain, wallet and storage contracts already exist in the software (but do not affect data storage yet), see [Blockchain and storage contracts](storage.md#blockchain-and-storage-contracts); the Rebuilder role is not implemented yet.
 Only the roles involved in payments are listed here, see [Ecosystem](ecosytem.md) for the full list of roles.
 An alternative approach is described in the [Merchants](merchants.md) draft proposal.
 

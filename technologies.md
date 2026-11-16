@@ -17,7 +17,8 @@ Below you can find the technologies used for the development of the BitDust proj
 ## Networking
 
 * Peer-to-Peer
-* TCP/UDP
+* TCP (UDP and HTTP transports are temporarily disabled)
+* UDP (Distributed Hash Table)
 * Distributed Hash Table
 * Data Streaming
 
