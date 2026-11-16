@@ -34,7 +34,7 @@ By default, all nodes trust each other and expect that the remote user accepts t
 
 Everyone has the right to modify the BitDust software (see [Control over the program](#control-over-the-program)), but to operate in the common network a modified version must follow the BitDust protocol. This initial trust is not blind: every packet received from another node is verified with its digital signature (see [How authentication works](identities.md#how-authentication-works)), packets with an invalid signature are rejected and unreliable suppliers are replaced (see [Software protection](#software-protection)). In addition, the GNU AGPLv3 license requires anyone who runs a modified version of BitDust in the network to publish its source code - this keeps the network transparent for everyone.
 
-By default, the BitDust software automatically updates itself from the Git repository it was cloned from. To run your own modified version, clone the software from your own fork of the repository - read more in the [Install BitDust software](install.md) section.
+To run your own modified version, clone the software from your own fork of the repository - read more in the [Install BitDust software](install.md) section.
 
 
 ## Software protection

@@ -93,12 +93,12 @@ Start using the software by creating an identity for your device in the BitDust 
 
 We recommend creating another copy of your Private Key in a safe place to be able to recover your identity and access to your data in the future. You can do it with this command (the BitDust software must be running):
 
-        bitdust key backup master <nickname>.bitdust.key
+        bitdust key backup master ~/<nickname>.bitdust.key
 
 
 In the future, in case you need to restore access to your data, you will need to install BitDust again and recover your identity:
 
-        bitdust id restore <nickname>.bitdust.key
+        bitdust identity restore ~/<nickname>.bitdust.key
 
 
 Your settings and local files are located in this folder: `~/.bitdust/`

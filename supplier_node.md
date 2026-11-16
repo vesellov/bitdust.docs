@@ -44,7 +44,7 @@ If you have not yet created an identity for your device in the BitDust network, 
 
 When you do it for the first time, we recommend creating another copy of your Private Key in a safe place to be able to recover your identity in BitDust in the future. You can make a backup copy with this command (the BitDust software must be running):
 
-        bitdust key backup master <nickname>.bitdust.key
+        bitdust key backup master ~/<nickname>.bitdust.key
 
 
 Finally, start the BitDust software in daemon mode so it keeps running in the background and you can keep using your PC:
